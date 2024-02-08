@@ -1,11 +1,7 @@
 /* global React ReactDOM */
-console.log("popupjs1");
 import {sfConn, apiVersion} from "./inspector.js";
-console.log("popupjs2");
 import {getAllFieldSetupLinks} from "./setup-links.js";
-console.log("popupjs3");
 import {setupLinks} from "./links.js";
-console.log("popupjs4");
 let h = React.createElement;
 
 {

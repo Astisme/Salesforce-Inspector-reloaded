@@ -1,6 +1,5 @@
 "use strict";
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  console.log("backgroundjs");
   // Perform cookie operations in the background page, because not all foreground pages have access to the cookie API.
   // Firefox does not support incognito split mode, so we use sender.tab.cookieStoreId to select the right cookie store.
   // Chrome does not support sender.tab.cookieStoreId, which means it is undefined, and we end up using the default cookie store according to incognito split mode.

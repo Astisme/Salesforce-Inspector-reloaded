@@ -1,4 +1,4 @@
-console.log("links");
+
 export let setupLinks = [
   //Setup
   {label: "Setup Home", link: "/lightning/setup/SetupOneHome/home", section: "Setup", prod: false},

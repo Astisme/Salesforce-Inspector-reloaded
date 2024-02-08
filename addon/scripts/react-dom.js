@@ -1,4 +1,3 @@
-console.log("reactdomjs");
  /**
   * ReactDOM v15.4.0
   */
