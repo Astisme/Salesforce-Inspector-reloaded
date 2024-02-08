@@ -1,4 +1,5 @@
 export let apiVersion = localStorage.getItem("apiVersion") == null ? "59.0" : localStorage.getItem("apiVersion");
+console.log("inspectorjs");
 export let sfConn = {
 
   async getSession(sfHost) {

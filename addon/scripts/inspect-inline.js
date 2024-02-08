@@ -1,5 +1,6 @@
 /* exported showStdPageDetails */
 "use strict";
+console.log("inspectinlinejs");
 function showStdPageDetails(metadataResponse, allFieldSetupLinks) {
   let fieldDetailsByLabel = new Map();
   // Loop through all label elements, add event listeners

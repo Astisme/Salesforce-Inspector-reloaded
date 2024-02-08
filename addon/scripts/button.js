@@ -15,6 +15,7 @@ if (document.querySelector("body.sfdcBody, body.ApexCSIPage, #auraLoadingBox") |
 }
 
 function initButton(sfHost, inInspector) {
+  console.log("buttonjs");
   let rootEl = document.createElement("div");
   rootEl.id = "insext";
   let btn = document.createElement("div");
@@ -85,6 +86,7 @@ function initButton(sfHost, inInspector) {
     let popupArrowOrientation = iFrameLocalStorage.popupArrowOrientation ? iFrameLocalStorage.popupArrowOrientation : "vertical";
     let popupArrowPosition = iFrameLocalStorage.popupArrowPosition ? (iFrameLocalStorage.popupArrowPosition + "%") : "122px";
     let img = document.createElement("img");
+    console.log({popupArrowOrientation});
     if (popupArrowOrientation == "vertical") {
       rootElement.style.right = 0;
       rootElement.style.top = popupArrowPosition;
@@ -108,11 +110,12 @@ function initButton(sfHost, inInspector) {
       }
     });
 
-    let popupSrc = chrome.runtime.getURL("popup.html");
+    let popupSrc = chrome.runtime.getURL("pages/popup.html");
     let popupEl = document.createElement("iframe");
     popupEl.className = "insext-popup";
     popupEl.classList.add(localStorage.getItem("popupArrowOrientation") == "horizontal" ? "insext-popup-horizontal" : "insext-popup-vertical");
     popupEl.src = popupSrc;
+    console.log("listenbutton");
     addEventListener("message", e => {
       if (e.source != popupEl.contentWindow) {
         return;
@@ -134,6 +137,7 @@ function initButton(sfHost, inInspector) {
             popupEl.classList.add("insext-popup-vertical-up");
           }
         }
+        console.log({rootEl,btn});
         setRootCSSProperties(rootEl, btn);
         addFlowScrollability(popupEl);
         popupEl.contentWindow.postMessage({
@@ -197,6 +201,7 @@ function initButton(sfHost, inInspector) {
         closePopup();
       }
     }
+    console.log("finebutton");
   }
 
 }

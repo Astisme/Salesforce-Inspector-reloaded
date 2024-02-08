@@ -1,5 +1,5 @@
 import {sfConn, apiVersion} from "./inspector.js";
-
+console.log("setuplinks");
 export async function getObjectSetupLinks(sfHost, sobjectName) {
   let {records: entityDefinitions} = await sfConn.rest(`/services/data/v${apiVersion}/tooling/query/?q=${encodeURIComponent(`select DurableId from EntityDefinition where QualifiedApiName = '${sobjectName}'`)}`);
   let durableId = entityDefinitions[0].DurableId.split(".");

@@ -1,8 +1,11 @@
 /* global React ReactDOM */
+console.log("popupjs1");
 import {sfConn, apiVersion} from "./inspector.js";
+console.log("popupjs2");
 import {getAllFieldSetupLinks} from "./setup-links.js";
+console.log("popupjs3");
 import {setupLinks} from "./links.js";
-
+console.log("popupjs4");
 let h = React.createElement;
 
 {
@@ -227,7 +230,7 @@ class App extends React.PureComponent {
     const browser = navigator.userAgent.includes("Chrome") ? "chrome" : "moz";
     const DEFAULT_CLIENT_ID = "3MVG9HB6vm3GZZR9qrol39RJW_sZZjYV5CZXSWbkdi6dd74gTIUaEcanh7arx9BHhl35WhHW4AlNUY8HtG2hs"; //Consumer Key of  default connected app
     const clientId = localStorage.getItem(sfHost + "_clientId") ? localStorage.getItem(sfHost + "_clientId") : DEFAULT_CLIENT_ID;
-    const oauthAuthorizeUrl = `https://${sfHost}/services/oauth2/authorize?response_type=token&client_id=` + clientId + "&redirect_uri=" + browser + "-extension://" + chrome.i18n.getMessage("@@extension_id") + "/data-export.html";
+    const oauthAuthorizeUrl = `https://${sfHost}/services/oauth2/authorize?response_type=token&client_id=` + clientId + "&redirect_uri=" + browser + "-extension://" + chrome.i18n.getMessage("@@extension_id") + "/pages/data-export.html";
     return (
       h("div", {},
         h("div", {className: "slds-grid slds-theme_shade slds-p-vertical_x-small slds-border_bottom"},
